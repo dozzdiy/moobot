@@ -6,23 +6,24 @@
 $url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg";
 
 $message = curlExecuteGet($url);
-//echo $message . "<br/>";
-
-/*$tab = array("UTF-8", "ASCII", "Windows-1252", "ISO-8859-15", "ISO-8859-1", "ISO-8859-6", "CP1256", "windows-874", "tis-620"); 
-$chain = ""; 
-foreach ($tab as $i) 
-    { 
-        foreach ($tab as $j) 
-        { 
-            $chain .= " $i$j ".iconv($i, $j, "$message") . "<br/>";
-        } 
-    } 
-echo $chain;*/
-
-//$message = iconv("windows-874", "UTF-8", $message);
-$message = "\n" . trim(str_replace(array("\n","\\n"),array("","\n"), $message));
 
 if($message != "weekend" and $message != "holiday"){
+	//echo $message . "<br/>";
+
+	/*$tab = array("UTF-8", "ASCII", "Windows-1252", "ISO-8859-15", "ISO-8859-1", "ISO-8859-6", "CP1256", "windows-874", "tis-620"); 
+	$chain = ""; 
+	foreach ($tab as $i) 
+		{ 
+			foreach ($tab as $j) 
+			{ 
+				$chain .= " $i$j ".iconv($i, $j, "$message") . "<br/>";
+			} 
+		} 
+	echo $chain;*/
+
+	//$message = iconv("windows-874", "UTF-8", $message);
+	$message = "\n" . trim(str_replace(array("\n","\\n"),array("","\n"), $message));
+
 	sendlinemesg();
 	$res = notify_message($message);
 }
