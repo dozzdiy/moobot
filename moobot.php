@@ -25,6 +25,8 @@ $message = "\n" . trim(str_replace(array("\n","\\n"),array("","\n"), $message));
 if(!stristr($message, "weekend") and !stristr($message, "holiday")){
 	sendlinemesg();
 	$res = notify_message($message);
+}else{
+	echo "e";
 }
 
 function sendlinemesg() {
