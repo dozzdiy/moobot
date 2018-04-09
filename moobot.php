@@ -22,8 +22,10 @@ echo $chain;*/
 //$message = iconv("windows-874", "UTF-8", $message);
 $message = "\n" . trim(str_replace(array("\n","\\n"),array("","\n"), $message));
 
-sendlinemesg();
-$res = notify_message($message);
+if($message != "weekend" and $message != "holiday"){
+	sendlinemesg();
+	$res = notify_message($message);
+}
 
 function sendlinemesg() {
     //$token = 'GRlw90niM9BbRj7Gzi0mJ7he8nNTud2vfPPwLMnBYkI'; //intranet
