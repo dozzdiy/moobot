@@ -1,6 +1,26 @@
 <?php
 
-$message = "สวัสดีชาว สบค. (ทดสอบระบบจาก moobot)";
+//header('Content-Type: text/html; charset=UTF-8');
+//$url = "http://webdev10g.nhso.go.th/ihr/lm/FrontEnd/LineMsg";
+//$url = "http://66.23.242.79/api.php";
+$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg";
+
+$message = curlExecuteGet($url);
+//echo $message . "<br/>";
+
+/* $tab = array("UTF-8", "ASCII", "Windows-1252", "ISO-8859-15", "ISO-8859-1", "ISO-8859-6", "CP1256", "windows-874", "tis-620"); 
+  $chain = "";
+  foreach ($tab as $i)
+  {
+  foreach ($tab as $j)
+  {
+  $chain .= " $i$j ".iconv($i, $j, "$message") . "<br/>";
+  }
+  }
+  echo $chain; */
+
+//$message = iconv("windows-874", "UTF-8", $message);
+$message = "\n" . trim(str_replace(array("\n", "\\n"), array("", "\n"), $message));
 
 if (!stristr($message, "weekend") and ! stristr($message, "holiday")) {
     sendlinemesg();
@@ -9,6 +29,7 @@ if (!stristr($message, "weekend") and ! stristr($message, "holiday")) {
     //echo "e";
 }
 
+$message = "สวัสดีชาว สบค. (ทดสอบระบบจาก moobot)";
 
 function sendlinemesg() {
     //$token = 'GRlw90niM9BbRj7Gzi0mJ7he8nNTud2vfPPwLMnBYkI'; //intranet group
