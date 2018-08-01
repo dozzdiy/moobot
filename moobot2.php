@@ -1,7 +1,7 @@
 <?php
 
 //$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg";
-$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NC4wNw==";
+$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NS42MQ==";
 
 $message = curlExecuteGet($url);
 
@@ -13,7 +13,7 @@ if(!stristr($message, "weekend") and !stristr($message, "holiday")){
 }
 
 function sendlinemesg() {
-    $token = 'Ga0sPA6J6XGSxrYAgP4IqYRvpyiC7gcDarSbfh5Ha2c'; //it nhso
+    $token = 'xrYwtPB6YLQazTTAW0DpDahsOvRMCCMCz10yEgdsNhn'; //1330
     define('LINE_API', "https://notify-api.line.me/api/notify");
     define('LINE_TOKEN', $token);
 }
