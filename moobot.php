@@ -7,7 +7,7 @@ $message = curlExecuteGet($url);
 
 $message = "\n" . trim(str_replace(array("\n","\\n"),array("","\n"), $message));
 
-echo message;
+echo $message;
 
 if(!stristr($message, "weekend") and !stristr($message, "holiday")){
 	sendlinemesg();
