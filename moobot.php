@@ -1,7 +1,7 @@
 <?php
 
 //$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg";
-$url = "https://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NC4wNw==";
+$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NC4wNw==";
 
 $message = curlExecuteGet($url);
 
