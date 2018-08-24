@@ -9,7 +9,7 @@ $message = "\n" . trim(str_replace(array("\n","\\n"),array("","\n"), $message));
 
 echo "m1=>" . $message . "<br/>";
 
-$message2 = file_get_contents(url);
+$message2 = file_get_contents($url);
 echo "m2=>" . $message2 . "<br/>";
 
 if(!stristr($message, "weekend") and !stristr($message, "holiday")){
