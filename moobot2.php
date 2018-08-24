@@ -3,7 +3,7 @@
 //$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg";
 $url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NS42MQ==";
 
-$message = curlExecuteGet($url);
+$message = file_get_contents($url); //curlExecuteGet($url);
 
 $message = "\n" . trim(str_replace(array("\n","\\n"),array("","\n"), $message));
 
