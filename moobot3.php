@@ -13,7 +13,7 @@ if(!stristr($message, "weekend") and !stristr($message, "holiday")){
 }
 
 function sendlinemesg() {
-    $token = 'CLrJj1TlmbtZaixpThwCqJffta6BJNaeYOvfqYZaZwZ'; //zone 3
+    $token = 'gRlphJoXXqraqXB358oEWmBxqjclPhkoxOkEbXvpQF2'; //zone 3
     define('LINE_API', "https://notify-api.line.me/api/notify");
     define('LINE_TOKEN', $token);
 }
