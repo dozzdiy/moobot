@@ -6,13 +6,13 @@ $message = curlExecuteGet($url);
 
 $message = "\n" . trim(str_replace(array("\n", "\\n"), array("", "\n"), $message));
 
-echo "m1=>" . len($message) . " | " . $message . "<br/>";
+echo "m1=>" . strlen($message) . " | " . $message . "<br/>";
 
 $message2 = file_get_contents($url);
-echo "m2=>" . len($message) . " | " . $message2 . "<br/>";
+echo "m2=>" . strlen($message2) . " | " . $message2 . "<br/>";
 
 $message3 = getSslPage($url);
-echo "m3=>" . len($message) . " | " . $message3 . "<br/>";
+echo "m3=>" . strlen($message3) . " | " . $message3 . "<br/>";
 
 function curlExecuteGet($url)
 {
