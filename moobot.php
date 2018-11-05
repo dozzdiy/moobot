@@ -22,8 +22,10 @@ if (!stristr($message, "weekend") and !stristr($message, "holiday")) {
 
 function sendlinemesg()
 {
-    //$token = 'Ga0sPA6J6XGSxrYAgP4IqYRvpyiC7gcDarSbfh5Ha2c'; //it nhso
-    $token = 'vG1VEFyWpU0wZN75XNYUSslmlPbNQdtezmSlw9alyaP'; //breakfast
+    //$token = 'vG1VEFyWpU0wZN75XNYUSslmlPbNQdtezmSlw9alyaP'; //breakfast
+	$token = 'Ga0sPA6J6XGSxrYAgP4IqYRvpyiC7gcDarSbfh5Ha2c'; //it nhso
+	//$token = 'xrYwtPB6YLQazTTAW0DpDahsOvRMCCMCz10yEgdsNhn'; //1330
+	//$token = 'gRlphJoXXqraqXB358oEWmBxqjclPhkoxOkEbXvpQF2'; //zone 3
     define('LINE_API', "https://notify-api.line.me/api/notify");
     define('LINE_TOKEN', $token);
 }
