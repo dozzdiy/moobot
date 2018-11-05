@@ -4,17 +4,18 @@ $url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NC4wNw==";
 
 $message = curlExecuteGet($url);
 
-$message = "\n" . trim(str_replace(array("\n","\\n"),array("","\n"), $message));
+$message = "\n" . trim(str_replace(array("\n", "\\n"), array("", "\n"), $message));
 
-echo "m1=>" . $message . "<br/>";
+echo "m1=>" . len($message) . " | " . $message . "<br/>";
 
 $message2 = file_get_contents($url);
-echo "m2=>" . $message2 . "<br/>";
+echo "m2=>" . len($message) . " | " . $message2 . "<br/>";
 
 $message3 = getSslPage($url);
-echo "m3=>" . $message3 . "<br/>";
+echo "m3=>" . len($message) . " | " . $message3 . "<br/>";
 
-function curlExecuteGet($url) {
+function curlExecuteGet($url)
+{
     $ch = curl_init();
     $timeout = 0;
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -25,7 +26,8 @@ function curlExecuteGet($url) {
     return $file_contents;
 }
 
-function getSslPage($url) {
+function getSslPage($url)
+{
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
     curl_setopt($ch, CURLOPT_HEADER, false);
