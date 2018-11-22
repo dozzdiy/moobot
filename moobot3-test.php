@@ -3,8 +3,7 @@
 //$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg";
 //$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NC4wNw=="; //it
 //$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NS42MQ=="; //1330
-//$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NS4zMg=="; //zone 3
-$url = "http://webdev10g.nhso.go.th/ihr/lm/FrontEnd/LineMsg?bureauID=NC4wNw==";
+$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NS4zMg=="; //zone 3
 
 $message = curlExecuteGet($url);
 //echo "m1=>" . strlen($message) . " | " . $message . "<br/>";
