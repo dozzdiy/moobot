@@ -35,6 +35,7 @@ function sendlinemesg()
 
 function notify_message($message)
 {
+    echo $_GET["node"] . "<br/>";
     $birthday = false;
     if (isset($_GET["node"]) && $_GET["node"] == "hbd" && stristr($message, "birthday")) {
         $birthday = true;
