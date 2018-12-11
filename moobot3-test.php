@@ -36,11 +36,13 @@ function sendlinemesg()
 function notify_message($message)
 {
     $birthday = false;
-    if (!isset($_GET["node"]) && $_GET["node"] == "hbd" && stristr($message, "birthday")) {
+    if (isset($_GET["node"]) && $_GET["node"] == "hbd" && stristr($message, "birthday")) {
         $birthday = true;
         $tmp_msg = explode("birthday", $message);
         //
         $message = $tmp_msg[1];
+    }else{
+        echo "hbd else<br/>";
     }
     if ($birthday) {
         $stk_arr[1] = array(
