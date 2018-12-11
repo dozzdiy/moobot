@@ -35,15 +35,14 @@ function sendlinemesg()
 
 function notify_message($message)
 {
-    $birthday = "";
-    if (stristr($message, "birthday")) {
+    $birthday = false;
+    if (isset($_GET["node"]) == "hbd" && stristr($message, "birthday")) {
+        $birthday = true;
         $tmp_msg = explode("birthday", $message);
-        echo $tmp_msg[0] . "|" . $tmp_msg[1];
         //
-        $message = $tmp_msg[0];
-        $birthday = $tmp_msg[1];
+        $message = $tmp_msg[1];
     }
-    if ($birthday != "") {
+    if ($birthday) {
         $stk_arr[1] = array(
             "stkid" => 257,
             "stkpkgid" => 3,
@@ -53,6 +52,7 @@ function notify_message($message)
             "stkpkgid" => 1,
         );
         $rid = $stk_arr[array_rand($stk_arr)];
+        //
         $queryData = array(
             'message' => $message,
             'stickerPackageId' => $rid["stkpkgid"],
