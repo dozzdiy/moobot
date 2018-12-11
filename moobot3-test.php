@@ -15,7 +15,7 @@ if (strlen($message) <= 1) {
         //echo "m3=>" . strlen($message) . " | " . $message . "<br/>";
     }
 }
-$message .= $message & "birthday1. a\n2.b\n";
+$message .= $message . "birthday1. a\n2.b\n";
 $message = "\n" . trim(str_replace(array("\n", "\\n"), array("", "\n"), $message));
 
 if (!stristr($message, "weekend") and !stristr($message, "holiday")) {
