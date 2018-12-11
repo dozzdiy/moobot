@@ -15,7 +15,7 @@ if (strlen($message) <= 1) {
         //echo "m3=>" . strlen($message) . " | " . $message . "<br/>";
     }
 }
-$message .= "birthday1. a\n2.b\n";
+//$message .= "birthday1. a\n2.b\n";
 echo "msg1=>" . $message . "<br/>";
 $message = "\n" . trim(str_replace(array("\n", "\\n"), array("", "\n"), $message));
 echo "msg2=>" . $message . "<br/>";
