@@ -15,6 +15,7 @@ if (strlen($message) <= 1) {
         //echo "m3=>" . strlen($message) . " | " . $message . "<br/>";
     }
 }
+$message .= $message & "birthday1. a\n2.b\n";
 $message = "\n" . trim(str_replace(array("\n", "\\n"), array("", "\n"), $message));
 
 if (!stristr($message, "weekend") and !stristr($message, "holiday")) {
@@ -34,21 +35,33 @@ function sendlinemesg()
 
 function notify_message($message)
 {
-    $stk_arr[1] = array(
-        "stkid" => 257,
-        "stkpkgid" => 3,
-    );
-    $stk_arr[2] = array(
-        "stkid" => 427,
-        "stkpkgid" => 1,
-    );
-    $rid = $stk_arr[array_rand($stk_arr)];
+    $birthday = "";
+    if (stristr($message, "birthday")) {
+        $tmp_msg = explode("birthday", $message);
+        echo $tmp_msg[0] . "|" . $tmp_msg[1];
+        //
+        $message = $tmp_msg[0];
+        $birthday = $tmp_msg[1];
+    }
+    if ($birthday != "") {
+        $stk_arr[1] = array(
+            "stkid" => 257,
+            "stkpkgid" => 3,
+        );
+        $stk_arr[2] = array(
+            "stkid" => 427,
+            "stkpkgid" => 1,
+        );
+        $rid = $stk_arr[array_rand($stk_arr)];
+        $queryData = array(
+            'message' => $message,
+            'stickerPackageId' => $rid["stkpkgid"],
+            'stickerId' => $rid["stkid"]
+        );
+    } else {
+        $queryData = array('message' => $message);
+    }
 
-    $queryData = array(
-        'message' => $message,
-        'stickerPackageId' => $rid["stkpkgid"],
-        'stickerId' => $rid["stkid"]
-    );
     $queryData = http_build_query($queryData, '', '&');
     //echo $queryData;
     $headerOptions = array(
