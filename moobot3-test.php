@@ -16,7 +16,9 @@ if (strlen($message) <= 1) {
     }
 }
 $message .= $message . "birthday1. a\n2.b\n";
+echo "msg1=>" . $message . "<br/>";
 $message = "\n" . trim(str_replace(array("\n", "\\n"), array("", "\n"), $message));
+echo "msg2=>" . $message . "<br/>";
 
 if (!stristr($message, "weekend") and !stristr($message, "holiday")) {
     sendlinemesg();
@@ -35,6 +37,7 @@ function sendlinemesg()
 
 function notify_message($message)
 {
+    echo "msg3=>" . $message . "<br/>";
     echo "1)" . (isset($_GET["node"]) ? "1" : "2") . "<br/>";
     echo "2)" . ($_GET["node"] == "hbd" ? "1" : "2") . "<br/>";
     echo "3)" . (stristr($message, "birthday") ? "1" : "2") . "<br/>";
