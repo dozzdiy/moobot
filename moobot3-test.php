@@ -35,7 +35,9 @@ function sendlinemesg()
 
 function notify_message($message)
 {
-    echo $_GET["node"] . "<br/>";
+    echo "1)" . (isset($_GET["node"]) ? "1" : "2") . "<br/>";
+    echo "2)" . ($_GET["node"] == "hbd" ? "1" : "2") . "<br/>";
+    echo "3)" . (stristr($message, "birthday") ? "1" : "2") . "<br/>";
     $birthday = false;
     if (isset($_GET["node"]) && $_GET["node"] == "hbd" && stristr($message, "birthday")) {
         $birthday = true;
