@@ -20,9 +20,11 @@ if (strlen($message) <= 1) {
 $message = "\n" . trim(str_replace(array("\n", "\\n"), array("", "\n"), $message));
 //echo "msg2=>" . $message . "<br/>";
 
-if (isset($_GET["node"]) && $_GET["node"] == "hbd" || stristr($message, "xxxxx")) {
-    sendlinemesg();
-    $res = notify_message($message);
+if (isset($_GET["node"]) && $_GET["node"] == "hbd") {
+    if(stristr($message, "xxxxx")) {
+        sendlinemesg();
+        $res = notify_message($message);
+    }
 } else if (!stristr($message, "weekend") && !stristr($message, "holiday")) {
     sendlinemesg();
     $res = notify_message($message);
@@ -40,10 +42,10 @@ function sendlinemesg()
 
 function notify_message($message)
 {
-    echo "msg3=>" . $message . "<br/>";
-    echo "1)" . (isset($_GET["node"]) ? "1" : "2") . "<br/>";
-    echo "2)" . ($_GET["node"] == "hbd" ? "1" : "2") . "<br/>";
-    echo "3)" . (stristr($message, "xxxxx") ? "1" : "2") . "<br/>";
+    //echo "msg3=>" . $message . "<br/>";
+    //echo "1)" . (isset($_GET["node"]) ? "1" : "2") . "<br/>";
+    //echo "2)" . ($_GET["node"] == "hbd" ? "1" : "2") . "<br/>";
+    //echo "3)" . (stristr($message, "xxxxx") ? "1" : "2") . "<br/>";
     $birthday = false;
     $tmp_msg = explode("xxxxx", $message);
     if (isset($_GET["node"]) && $_GET["node"] == "hbd" && stristr($message, "xxxxx")) {
