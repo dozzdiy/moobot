@@ -40,10 +40,10 @@ function sendlinemesg()
 
 function notify_message($message)
 {
-    //echo "msg3=>" . $message . "<br/>";
-    //echo "1)" . (isset($_GET["node"]) ? "1" : "2") . "<br/>";
-    //echo "2)" . ($_GET["node"] == "hbd" ? "1" : "2") . "<br/>";
-    //echo "3)" . (stristr($message, "xxxxx") ? "1" : "2") . "<br/>";
+    echo "msg3=>" . $message . "<br/>";
+    echo "1)" . (isset($_GET["node"]) ? "1" : "2") . "<br/>";
+    echo "2)" . ($_GET["node"] == "hbd" ? "1" : "2") . "<br/>";
+    echo "3)" . (stristr($message, "xxxxx") ? "1" : "2") . "<br/>";
     $birthday = false;
     $tmp_msg = explode("xxxxx", $message);
     if (isset($_GET["node"]) && $_GET["node"] == "hbd" && stristr($message, "xxxxx")) {
