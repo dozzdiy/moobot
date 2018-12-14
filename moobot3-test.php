@@ -1,8 +1,8 @@
 <?php
 
 //$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg";
-//$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NC4wNw=="; //it
-$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NS42MQ=="; //1330
+$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NC4wNw=="; //it
+//$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NS42MQ=="; //1330
 //$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NS4zMg=="; //zone 3
 
 $message = curlExecuteGet($url);
@@ -46,9 +46,9 @@ function notify_message($message)
     if (isset($_GET["node"]) && $_GET["node"] == "hbd" && stristr($message, "xxxxx")) {
         $birthday = true;
         $message = $tmp_msg[1];
-    }else{
-        $message = $tmp_msg[0];
-    }
+    }//else{
+      //  $message = $tmp_msg[0];
+    //}
     if ($birthday) {
         $stk_arr[1] = array(
             "stkid" => 257,
