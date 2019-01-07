@@ -53,8 +53,11 @@ function notify_message($message)
         $message = $tmp_msg[1];
 		echo "if1";
     }else{
-	echo "else1";
+	echo "else1=>" . $message;
+	$message = $tmp_msg[0];
 	}
+	echo "msg4=>" . $message;
+
     if ($birthday) {
         $stk_arr[1] = array(
             "stkid" => 257,
@@ -73,7 +76,7 @@ function notify_message($message)
         );
 		echo "if2";
     } else {
-		echo "else2";
+		echo "else2=>" . $message;
         $queryData = array('message' => $message);
     }
 /*
