@@ -42,21 +42,21 @@ function sendlinemesg()
 
 function notify_message($message)
 {
-    echo "msg3=>" . $message . "<br/>";
-    echo "1)" . (isset($_GET["node"]) ? "1" : "2") . "<br/>";
-    echo "2)" . ($_GET["node"] == "hbd" ? "1" : "2") . "<br/>";
-    echo "3)" . (stristr($message, "xxxxx") ? "1" : "2") . "<br/>";
+    //echo "msg3=>" . $message . "<br/>";
+    //echo "1)" . (isset($_GET["node"]) ? "1" : "2") . "<br/>";
+    //echo "2)" . ($_GET["node"] == "hbd" ? "1" : "2") . "<br/>";
+    //echo "3)" . (stristr($message, "xxxxx") ? "1" : "2") . "<br/>";
     $birthday = false;
     $tmp_msg = explode("xxxxx", $message);
     if (isset($_GET["node"]) && $_GET["node"] == "hbd" && stristr($message, "xxxxx")) {
         $birthday = true;
-        $message = $tmp_msg[1];
+        //$message = $tmp_msg[1];
 		echo "if1". "<br/>";
     }else{
-	echo "else1=>" . $message . "<br/>";
+	//echo "else1=>" . $message . "<br/>";
 	$message = $tmp_msg[0];
 	}
-	echo "msg4=>" . $message . "<br/>";
+	//echo "msg4=>" . $message . "<br/>";
 
     if ($birthday) {
         $stk_arr[1] = array(
@@ -74,9 +74,9 @@ function notify_message($message)
             'stickerPackageId' => $rid["stkpkgid"],
             'stickerId' => $rid["stkid"]
         );
-		echo "if2" . "<br/>";
+		//echo "if2" . "<br/>";
     } else {
-		echo "else2=>" . $message . "<br/>";
+		//echo "else2=>" . $message . "<br/>";
         $queryData = array('message' => $message);
     }
 /*
