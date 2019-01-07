@@ -50,11 +50,11 @@ function notify_message($message)
     $tmp_msg = explode("xxxxx", $message);
     if (isset($_GET["node"]) && $_GET["node"] == "hbd" && stristr($message, "xxxxx")) {
         $birthday = true;
-        //$message = $tmp_msg[1];
-		echo "if1". "<br/>";
+        $message = $tmp_msg[1];
+		//echo "if1". "<br/>";
     }else{
-	//echo "else1=>" . $message . "<br/>";
-	$message = $tmp_msg[0];
+		//echo "else1=>" . $message . "<br/>";
+		$message = $tmp_msg[0];
 	}
 	//echo "msg4=>" . $message . "<br/>";
 
