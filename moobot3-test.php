@@ -51,7 +51,10 @@ function notify_message($message)
     if (isset($_GET["node"]) && $_GET["node"] == "hbd" && stristr($message, "xxxxx")) {
         $birthday = true;
         $message = $tmp_msg[1];
-    }
+		echo "if1";
+    }else{
+	echo "else1";
+	}
     if ($birthday) {
         $stk_arr[1] = array(
             "stkid" => 257,
@@ -68,11 +71,13 @@ function notify_message($message)
             'stickerPackageId' => $rid["stkpkgid"],
             'stickerId' => $rid["stkid"]
         );
+		echo "if2";
     } else {
+		echo "else2";
         $queryData = array('message' => $message);
     }
-
-    //$queryData = http_build_query($queryData, '', '&');
+/*
+    $queryData = http_build_query($queryData, '', '&');
     //echo $queryData;
     $headerOptions = array(
         'http' => array(
@@ -85,7 +90,7 @@ function notify_message($message)
     );
     $context = stream_context_create($headerOptions);
     $result = file_get_contents(LINE_API, FALSE, $context);
-    $res = json_decode($result);
+    $res = json_decode($result);*/
     return $res;
 }
 
