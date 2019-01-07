@@ -79,7 +79,7 @@ function notify_message($message)
 		//echo "else2=>" . $message . "<br/>";
         $queryData = array('message' => $message);
     }
-/*
+
     $queryData = http_build_query($queryData, '', '&');
     //echo $queryData;
     $headerOptions = array(
@@ -93,7 +93,7 @@ function notify_message($message)
     );
     $context = stream_context_create($headerOptions);
     $result = file_get_contents(LINE_API, FALSE, $context);
-    $res = json_decode($result);*/
+    $res = json_decode($result);
     return $res;
 }
 
