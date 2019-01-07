@@ -72,7 +72,7 @@ function notify_message($message)
         $queryData = array('message' => $message);
     }
 
-    $queryData = http_build_query($queryData, '', '&');
+    //$queryData = http_build_query($queryData, '', '&');
     //echo $queryData;
     $headerOptions = array(
         'http' => array(
