@@ -1,18 +1,18 @@
 <?php
 
 //$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg";
-//$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NC4wNw=="; //it
+$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NC4wNw=="; //it
 //$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NS42MQ=="; //1330
-$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NS4zMg=="; //zone 3
+//$url = "http://ihr.nhso.go.th/lm/FrontEnd/LineMsg?bureauID=NS4zMg=="; //zone 3
 
 $message = curlExecuteGet($url);
-//echo "m1=>" . strlen($message) . " | " . $message . "<br/>";
+echo "m1=>" . strlen($message) . " | " . $message . "<br/>";
 if (strlen($message) <= 1) {
     $message = file_get_contents($url);
-    //echo "m2=>" . strlen($message) . " | " . $message . "<br/>";
+    echo "m2=>" . strlen($message) . " | " . $message . "<br/>";
     if (strlen($message) <= 1) {
         $message = getSslPage($url);
-        //echo "m3=>" . strlen($message) . " | " . $message . "<br/>";
+        echo "m3=>" . strlen($message) . " | " . $message . "<br/>";
     }
 }
 //$message .= "birthday1. a\n2.b\n";
@@ -22,11 +22,11 @@ $message = "\n" . trim(str_replace(array("\n", "\\n"), array("", "\n"), $message
 
 if (isset($_GET["node"]) && $_GET["node"] == "hbd") {
     if(stristr($message, "xxxxx")) {
-        sendlinemesg();
+        //sendlinemesg();
         $res = notify_message($message);
     }
 } else if (!stristr($message, "weekend") && !stristr($message, "holiday")) {
-    sendlinemesg();
+    //sendlinemesg();
     $res = notify_message($message);
 }
 
